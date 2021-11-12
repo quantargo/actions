@@ -35,7 +35,10 @@ runs:
           restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
 
       - name: Install renv dependencies
-        run: renv::restore()
+        run: | 
+          renv::restore()
+        env: 
+          RENV_CONFIG_REPOS_OVERRIDE: https://repository.quantargo.com/ubuntu-20.04/r-4.0.5
         shell: Rscript {0}
 
       - name: Don't use tar 1.30 from Rtools35 to store the cache
