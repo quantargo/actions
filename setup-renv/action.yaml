@@ -38,7 +38,7 @@ runs:
         run: | 
           renv::restore()
         env: 
-          RENV_CONFIG_REPOS_OVERRIDE: https://repository.quantargo.com/ubuntu-20.04/r-4.0.5
+          RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.rstudio.com/cran/__linux__/focal/latest
         shell: Rscript {0}
 
       - name: Don't use tar 1.30 from Rtools35 to store the cache
