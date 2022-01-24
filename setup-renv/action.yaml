@@ -36,7 +36,7 @@ runs:
 
       - name: Install renv dependencies
         run: | 
-          options(renv.config.repos.override = c("https://packagemanager.rstudio.com/cran/__linux__/focal/latest", "https://cloud.r-project.org"))
+          options(renv.config.repos.override = c(CRAN="https://packagemanager.rstudio.com/cran/__linux__/focal/latest", CLOUD="https://cloud.r-project.org"))
           renv::restore()
         shell: Rscript {0}
 
